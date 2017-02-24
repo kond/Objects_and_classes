@@ -3,32 +3,50 @@
  */
 public class Car {
   //Add somethings here to create a car and some fields
-  private String color = "red";
-  private int engineCc = 1600;
-  private String type = "";
-  private int kmOdometer = 0;
+  private String color;
+  private int sizeEngine;
+  private String tyCar;
+  private int kmOdometer;
 
+
+  // Getters
   public String getColor() {
     return color;
   }
 
-  public int getEngineCc() {
-    return engineCc;
+  public int getSizeEngine() {
+    return sizeEngine;
   }
 
-  public String getType() {
-    return type;
+  public String getTyCar() {
+    return tyCar;
   }
 
   public int getKmOdometer() {
     return kmOdometer;
   }
 
-  public void setType(String type) {
-    this.type = type;
+  // Setters
+
+  public void setColor(String color) {
+    this.color = color;
+  }
+
+  public void setSizeEngine(int sizeEngine) {
+    this.sizeEngine = sizeEngine;
+  }
+
+  public void setTyCar(String tyCar) {
+    this.tyCar = tyCar;
   }
 
   public void setKmOdometer(int kmOdometer) {
     this.kmOdometer = kmOdometer;
+  }
+
+  // Constructors
+  public Car() {
+    sizeEngine = 1600;
+    color = "red";
   }
 }
