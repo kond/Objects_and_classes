@@ -4,8 +4,15 @@
 public class App {
   public static void main(String[] args){
     Car myCar = new Car();
-    System.out.printf("Just got a new Car, it's %s and has a %d cc Engine!\n",
-            myCar.getColor() , myCar.getEngineCc() // replace this stuff with the way we get those attributes about myCar
+
+    // km's set to 12312
+    // type should be Mazda
+    myCar.setKmOdometer(12312);
+    myCar.setType("Mazda");
+
+    //sout "This %s is %s, has %d cc engine and clocked %d km's\n"
+    System.out.printf("This %s is %s, has %d cc engine and clocked %d km's\n",
+            myCar.getType(), myCar.getColor(), myCar.getEngineCc(), myCar.getKmOdometer()
     );
   }
 }
