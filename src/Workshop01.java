@@ -8,38 +8,19 @@ import java.util.Random;
 public class Workshop01 {
   public static void main(String[] args) {
 
-    String[] colors = {"white", "blue", "red", "silver", "black", "green", "banana"};
-    String[] makes = {"toyota", "mazda", "bmw", "vw", "opel", "suzuki", "ford", "mercedes"};
-    int[] sizes = {1100, 1400, 1600, 1800, 2500};
-
-    System.out.println("Number of Cars Available = " + Car.getCount());
+    System.out.println("Number of Cars Available = " + Garage.getCount());
 
     // Define cars
+    Garage garage = new Garage();
+
+    System.out.println("Number of Cars Available = " + Garage.getCount());
+
     for(int i=0; i<40; i++) {
-      Random rnd = new Random();
-      String tyCar = makes[rnd.nextInt(makes.length)];
-      String color = colors[rnd.nextInt(colors.length)];
-      int sizeEngine = sizes[rnd.nextInt(sizes.length)];
-      Car car = new Car(tyCar, color, sizeEngine, 0);
-
-      if (i < 2) {
-        System.out.println("Number of Cars Available = " + Car.getCount());
-      }
+      garage.addRandomCar();
     }
 
-    ArrayList<Car> lsCars = Car.getCars();
+    ArrayList<Car> lsCars = Garage.getCars();
 
-    int i = 3;
-    // Print car infos
-    for(Car car : lsCars) {
-      if(i > 0) {
-        Random rnd = new Random();
-        //car.drive(rnd.nextInt(100));
-        System.out.println(car.toString());
-        i--;
-      }
-    }
-
-    System.out.println("Number of Cars Available = " + Car.getCount());
+    System.out.println("Number of Cars Available = " + Garage.getCount());
   }
 }
