@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 /**
  * Created by kond on 2017. 02. 24..
  */
@@ -7,6 +9,7 @@ public class Car {
   private int sizeEngine;
   private String tyCar;
   private int kmOdometer;
+  protected static ArrayList<Car> cars = new ArrayList<Car>();
 
 
   /** Getters **/
@@ -25,6 +28,10 @@ public class Car {
 
   public int getKmOdometer() {
     return kmOdometer;
+  }
+
+  public static ArrayList<Car> getCars() {
+    return cars;
   }
 
   /** Setters **/
@@ -64,6 +71,7 @@ public class Car {
     this.color = color;
     this.sizeEngine = sizeEngine;
     this.kmOdometer = kmOdometer;
+    cars.add(this);
   }
 
   /** Methods **/
@@ -87,7 +95,7 @@ public class Car {
 
   // Returns the main parameters of the car in a sentence.
   public String toString() {
-    return "This " + this.tyCar + " is " + this.color + "," +
+    return "This " + this.tyCar + " is " + this.color + ", " +
             "has " + this.sizeEngine + " cc engine" +
             "and clocked " + this.kmOdometer + " km's";
   }
