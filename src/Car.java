@@ -9,7 +9,8 @@ public class Car {
   private int kmOdometer;
 
 
-  // Getters
+  /** Getters **/
+
   public String getColor() {
     return color;
   }
@@ -26,7 +27,7 @@ public class Car {
     return kmOdometer;
   }
 
-  // Setters
+  /** Setters **/
 
   public void setColor(String color) {
     this.color = color;
@@ -44,14 +45,16 @@ public class Car {
     this.kmOdometer = kmOdometer;
   }
 
-  // Constructors
+  /** Constructors **/
+
   public Car() {
     sizeEngine = 1600;
     color = "red";
   }
 
-  // Methods
+  /** Methods **/
 
+  // Drives car input km
   public void drive(int kms) {
     this.kmOdometer += kms;
 
@@ -66,6 +69,13 @@ public class Car {
     }
 
     System.out.println(message);
+  }
+
+  // Returns the main parameters of the car in a sentence.
+  public String toString() {
+    return "This " + this.tyCar + " is " + this.color + "," +
+            "has " + this.sizeEngine + " cc engine" +
+            "and clocked " + this.kmOdometer + " km's";
   }
 
 }

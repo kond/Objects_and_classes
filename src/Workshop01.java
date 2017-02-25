@@ -50,9 +50,7 @@ public class Workshop01 {
      * This Beamer is green, has 2800 cc engine and clocked 42521 km's.
      */
     for(Car car : cars) {
-      System.out.printf("This %s is %s, has %d cc engine and clocked %d km's\n",
-              car.getTyCar(), car.getColor(), car.getSizeEngine(), car.getKmOdometer()
-      );
+        System.out.println(car.toString());
     }
   }
 }
