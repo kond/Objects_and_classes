@@ -48,8 +48,22 @@ public class Car {
   /** Constructors **/
 
   public Car() {
-    sizeEngine = 1600;
-    color = "red";
+    this("Mazda", "red", 1600, 10);
+  }
+
+  public Car(String tyCar, String color) {
+    this(tyCar, color, 1600, 10);
+  }
+
+  public Car(int sizeEngine, int kmOdometer) {
+    this("Mazda", "red", sizeEngine, kmOdometer);
+  }
+
+  public Car(String tyCar, String color, int sizeEngine, int kmOdometer) {
+    this.tyCar = tyCar;
+    this.color = color;
+    this.sizeEngine = sizeEngine;
+    this.kmOdometer = kmOdometer;
   }
 
   /** Methods **/
