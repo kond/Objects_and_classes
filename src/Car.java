@@ -10,7 +10,7 @@ public class Car {
   private String tyCar;
   private int kmOdometer;
   protected static ArrayList<Car> cars = new ArrayList<Car>();
-
+  protected static int countCar = -1;
 
   /** Getters **/
 
@@ -32,6 +32,10 @@ public class Car {
 
   public static ArrayList<Car> getCars() {
     return cars;
+  }
+
+  public static int getCount() {
+    return countCar;
   }
 
   /** Setters **/
@@ -72,6 +76,7 @@ public class Car {
     this.sizeEngine = sizeEngine;
     this.kmOdometer = kmOdometer;
     cars.add(this);
+    countCar++;
   }
 
   /** Methods **/

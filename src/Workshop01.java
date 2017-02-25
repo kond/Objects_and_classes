@@ -12,6 +12,8 @@ public class Workshop01 {
     String[] makes = {"toyota", "mazda", "bmw", "vw", "opel", "suzuki", "ford", "mercedes"};
     int[] sizes = {1100, 1400, 1600, 1800, 2500};
 
+    System.out.println("Number of Cars Available = " + Car.getCount());
+
     // Define cars
     for(int i=0; i<40; i++) {
       Random rnd = new Random();
@@ -19,19 +21,25 @@ public class Workshop01 {
       String color = colors[rnd.nextInt(colors.length)];
       int sizeEngine = sizes[rnd.nextInt(sizes.length)];
       Car car = new Car(tyCar, color, sizeEngine, 0);
+
+      if (i < 2) {
+        System.out.println("Number of Cars Available = " + Car.getCount());
+      }
     }
 
     ArrayList<Car> lsCars = Car.getCars();
 
-    int i = 2;
+    int i = 3;
     // Print car infos
     for(Car car : lsCars) {
       if(i > 0) {
         Random rnd = new Random();
-        car.drive(rnd.nextInt(100));
+        //car.drive(rnd.nextInt(100));
         System.out.println(car.toString());
         i--;
       }
     }
+
+    System.out.println("Number of Cars Available = " + Car.getCount());
   }
 }
