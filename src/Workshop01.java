@@ -26,6 +26,24 @@ public class Workshop01 {
     car3.setKmOdometer(42521);
     cars.add(car3);
 
+    car1.drive(15);
+    System.out.printf("The %s %s odometer now shows %d\n",
+            car1.getColor(),
+            car1.getTyCar(),
+            car1.getKmOdometer());
+
+    car3.drive(49);
+    System.out.printf("The %s %s odometer now shows %d\n",
+            car3.getColor(),
+            car3.getTyCar(),
+            car3.getKmOdometer());
+
+    car2.drive(1200);
+    System.out.printf("The %s %s odometer now shows %d\n",
+            car2.getColor(),
+            car2.getTyCar(),
+            car2.getKmOdometer());
+
     /**
      * This Mazda is red, has 1600 cc engine and clocked 12312 km's.
      * This Ford is silver, has 2500 cc engine and clocked 152312 km's.

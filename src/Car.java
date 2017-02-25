@@ -49,4 +49,23 @@ public class Car {
     sizeEngine = 1600;
     color = "red";
   }
+
+  // Methods
+
+  public void drive(int kms) {
+    this.kmOdometer += kms;
+
+    String message;
+
+    if(kms < 20) {
+      message = "brrm, " + this.color + " " + this.tyCar + " just drove around town " + kms + " clicks.";
+    } else if (kms < 50) {
+      message = "brrm, screech, brrm, screech; " + this.tyCar + " commuted " + kms + " clicks.";
+    } else {
+      message = "whee, " + this.tyCar + " " + kms + " clicks.";
+    }
+
+    System.out.println(message);
+  }
+
 }
