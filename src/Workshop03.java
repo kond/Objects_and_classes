@@ -7,29 +7,20 @@ import java.util.Random;
  */
 public class Workshop03 {
   public static void main(String[] args) {
-
-    String[] pirateFirstNames = {"Derek", "Walsh", "Halliwell", "Twyford", "Modred", "Tab",
-            "Frost", "Beamer", "Halford", "Thornton"};
-    String[] pirateFameNames = {"Fierce", "Killer", "Shifty", "Privateer", "Landlubber",
-            "Silver Hair", "Gray Beard", "Privateer", "Crazy Eyes", "First Mate"};
-    String[] pirateLastNames = {"Ward", "Lynk", "Orfeo", "Smithy", "Reks", "Smith",
-            "Roscoe", "Lexx", "Bentley", "Crawford"};
-
     Random rnd = new Random();
 
     // Define pirates
     for(int i=0; i<20; i++) {
-      String firstName = pirateFirstNames[rnd.nextInt(pirateFameNames.length)];
-      String fameName = pirateFameNames[rnd.nextInt(pirateFameNames.length)];
-      String lastName = pirateLastNames[rnd.nextInt(pirateLastNames.length)];
+      String firstName = Pirate.pirateFirstNames[rnd.nextInt(Pirate.pirateFameNames.length)];
+      String fameName = Pirate.pirateFameNames[rnd.nextInt(Pirate.pirateFameNames.length)];
+      String lastName = Pirate.pirateLastNames[rnd.nextInt(Pirate.pirateLastNames.length)];
 
       Pirate p = new Pirate(firstName + " \'" + fameName + "\' " + lastName);
     }
 
-    ArrayList<Pirate> pirates = Pirate.getPirates();
-
     int piratePartyLength = 50;
 
+    /*
     // Let's drink
     System.out.println();
     System.out.println("### LET\'S DRINK ###");
@@ -53,6 +44,7 @@ public class Workshop03 {
       System.out.println();
       pirates.get(rnd.nextInt(pirates.size())).brawl(pirates.get(rnd.nextInt(pirates.size())));
     }
+    */
 
   }
 }

@@ -1,4 +1,3 @@
-import java.util.ArrayList;
 import java.util.Random;
 
 /**
@@ -9,14 +8,19 @@ public class Pirate {
   protected String name;
   protected int rumCount;
   protected Boolean alive;
-  protected static ArrayList<Pirate> pirates = new ArrayList<Pirate>();
+
+  public static String[] pirateFirstNames = {"Derek", "Walsh", "Halliwell", "Twyford", "Modred", "Tab",
+          "Frost", "Beamer", "Halford", "Thornton"};
+  public static String[] pirateFameNames = {"Fierce", "Killer", "Shifty", "Privateer", "Landlubber",
+          "Silver Hair", "Gray Beard", "Privateer", "Crazy Eyes", "First Mate"};
+  public static String[] pirateLastNames = {"Ward", "Lynk", "Orfeo", "Smithy", "Reks", "Smith",
+          "Roscoe", "Lexx", "Bentley", "Crawford"};
 
   /** Constructors **/
   public Pirate(String name) {
     this.name = name;
     this.rumCount = 0;
     this.alive = true;
-    pirates.add(this);
   }
 
   /** Getters **/
@@ -28,8 +32,23 @@ public class Pirate {
     return name;
   }
 
-  public static ArrayList<Pirate> getPirates() {
-    return pirates;
+  public int getRumCount() {
+    return rumCount;
+  }
+
+  public String getState() {
+    String state;
+    if(this.alive) {
+      if(this.rumCount < 5) {
+        state = "fine";
+      } else {
+        state = "passes out";
+      }
+    } else {
+      state = "dead";
+    }
+    state += " after " + this.rumCount + " rums";
+    return state;
   }
 
   /** Setters **/
@@ -47,7 +66,7 @@ public class Pirate {
   public void drinkSomeRum() {
     if(this.alive) {
       rumCount++;
-      System.out.println(this.name + " drinks a rum. Now he had " + this.rumCount);
+      //System.out.println(this.name + " drinks a rum. Now he had " + this.rumCount);
     } else {
       System.out.println(this.alreadyDead());
     }
@@ -72,7 +91,7 @@ public class Pirate {
   public void die() {
     if(this.alive) {
       this.alive = false;
-      System.out.println(this.name + " died.");
+      //System.out.println(this.name + " died.");
     } else {
       System.out.println(this.alreadyDead());
     }
